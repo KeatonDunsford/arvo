@@ -3,7 +3,7 @@
   ::
 ::
 /?    310
-/=    tub    /$  |=({bem/beam *} (slag (lent /web) (flop s.bem)))
+/=    tub    /$  |=({bem/beam *} (slag (lent /web/main) (flop s.bem)))
 /=    aut
   /$  %+  cork  fuel                                    :: after parsing params,
       |=  gas/epic  ^-  ?                               :: check that the fcgi
