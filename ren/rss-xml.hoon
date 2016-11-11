@@ -16,7 +16,8 @@
 |%
 ++  relative-link
   =/  external-host
-    ~+(.^(hart %e /(scot %p our)/host/real))
+    :: ~+(.^(hart %e /(scot %p our)/host/real))
+    -:(need (epur 'https://urbit.org'))  ::  special handling for main site
   |=  a/path  ^-  tape
   (earn external-host `(weld pax.top a) ~)
 ::
