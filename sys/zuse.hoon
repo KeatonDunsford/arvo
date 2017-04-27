@@ -3061,7 +3061,8 @@
           {{key/@t *} t/*}
         =>  .(wer [[~ wit] ~]=wer)
         ?:  =(key.wer p.n.p.jon)
-          [key.wer ~|(key+key.wer (wit.wer q.n.p.jon))]
+          ~!  key=key.wer
+          [key.wer ~|(key=key.wer (wit.wer q.n.p.jon))]
         ?~  t.wer  ~|(bad-key+p.n.p.jon !!)
         ((of t.wer) jon)
       ==
