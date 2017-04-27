@@ -5,6 +5,7 @@
 |%
 ++  card  {$wait wire @da}
 --
+=,  ^gall
 |_  {bowl $~}
 ++  poke-noun
   |=  *
