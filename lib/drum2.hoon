@@ -741,8 +741,8 @@
 ::
 ++  se-just                                             ::< show adjusted buffer
   ::> lin: buffer to display. {q.lin} is cropped to
-  ::> the terminal with {edg},
-  ::> keeping the the cursor {p.lin} visible
+  ::> the terminal width {edg}, keeping the
+  ::> cursor {p.lin} visible
   ::
   |=  lin/(pair @ud stub:^dill)
   ^+  +>
