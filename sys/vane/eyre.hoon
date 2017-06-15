@@ -2047,7 +2047,7 @@
       ~  :: XX add non-scry binding to $hat gram
     =.  p.lot  ?.(=([%da now] p.lot) p.lot [%tas %real])
     ?+  p.lot  [~ ~]
-      {$tas $fake}  ``[& [~ 8.443] %& /localhost]       :: XX from unix
+      {$tas $fake}  ``[& ~ %& /org/urbit/womb]       :: XX from unix
       {$tas $real}
         ``~(our-host ye [`duct`~[/] [now eny our sky] ~] bol)
     ==
