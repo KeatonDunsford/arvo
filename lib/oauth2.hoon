@@ -255,6 +255,7 @@
   ::  If the last request refreshed the access token, save it.
   ++  res-save-after-refresh
     |=  a/httr  ^-  core-move
+    ?:  =(%504 p.a)  [%redo ~]  :: limit? expand to other errors?
     ?.  pending.ref  [%give a]
     =+  `{axs/token exp/@u}`(grab-expiring-token a)
     =.  ref  (~(update re ref) exp)
