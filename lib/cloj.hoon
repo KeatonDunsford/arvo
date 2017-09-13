@@ -7,7 +7,7 @@
     term
   ==
 ::
-++  term  (plus ;~(less bar pel per gah prn))           ::  terminal symbol 
+++  term  (plus ;~(less pel per gah prn))               ::  terminal symbol 
   ::
 ::::  testing core
 ::
