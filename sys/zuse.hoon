@@ -35,6 +35,26 @@
 ::::                                                    ::  ::  (1) models
   ::                                                    ::  ::
 |%
+:>  #  %misc
+:>
+:>  miscellaneous systems types
++|
+++  ares  (unit {p/term q/(list tank)})                 ::  possible error
+++  coop  (unit ares)                                   ::  possible error
+++  json                                                ::  normal json value
+  $@  $~                                                ::  null
+  $%  {$a p/(list json)}                                ::  array
+      {$b p/?}                                          ::  boolean
+      {$o p/(map @t json)}                              ::  object
+      {$n p/@ta}                                        ::  number
+      {$s p/@t}                                         ::  string
+  ==                                                    ::
+++  mime  {p/mite q/octs}                               ::  mimetyped data
+++  octs  {p/@ud q/@t}                                  ::  octet-stream
+++  sack  {p/ship q/ship}                               ::  incoming [our his]
+++  sock  {p/ship q/ship}                               ::  outgoing [our his]
+::+|
+::
 ++  roof  (room vase)                                   ::  namespace
 ++  room                                                ::  either namespace
   |*  vase/mold                                         ::  vase or maze
@@ -664,7 +684,6 @@
     $:  qix/(map @t @t)                                 ::  query
         ced/cred                                        ::  client credentials
         bem/beam                                        ::  original path
-        but/path                                        ::  ending
     ==                                                  ::
   +=  gram                                              ::  inter-ship message
     $?  [[%lon ~] p=hole]                               ::  login request
@@ -892,6 +911,11 @@
   ++  cush  (pair term club)                            ::  internal task
   ++  dude  term                                        ::  server identity
   ++  gill  (pair ship term)                            ::  general contact
+  ++  scar                                              ::  opaque duct
+    $:  p/@ud                                           ::  bone sequence
+        q/(map duct bone)                               ::  by duct
+        r/(map bone duct)                               ::  by bone
+    ==                                                  ::
   ++  scup  (pair ship desk)                            ::  autoupdate
   ++  suss  (trel dude @tas @da)                        ::  config report
   ++  well  (pair desk term)                            ::
@@ -1165,9 +1189,10 @@
       $%  {$west p/ship q/path r/*}                     ::  network request
       ==                                                ::
     ++  sign                                            ::  in response $-<
-      $%  {$g $rend p/path q/*}                         ::  network request
-          {$g $mack p/(unit tang)}                      ::  message ack
-      ==                                                ::
+      $:  $g                                            ::
+          $%  {$rend p/path q/*}                        ::  network request
+              {$mack p/(unit tang)}                     ::  message ack
+      ==  ==                                            ::
     ++  note                                            ::  out request $->
       $%  {$c $west p/ship q/path r/*}                  ::  to %clay
           {$e $west p/ship q/path r/*}                  ::  to %eyre
@@ -3331,7 +3356,7 @@
     ++  op                                              ::  parse keys of map
       |*  {fel/rule wit/fist}
       %+  cu  
-        |=  a/(list _[(wonk *fel) (need *wit)])
+        |=  a/(list (pair _(wonk *fel) _(need *wit)))
         (my:nl a)
       %-  ci  :_  (om wit)
       |=  a/(map cord _(need *wit))
@@ -4175,7 +4200,7 @@
       |=  {bem/beam ced/noun:cred quy/quer}
       ^-  epic
       =+  qix=|-(`quay`?~(quy quy [[p q]:quy $(quy t.quy)]))
-      [(malt qix) ((hard cred) ced) bem /]
+      [(malt qix) ((hard cred) ced) bem]
   --  ::eyre
 ::                                                      ::
 ::::                      ++wired                       ::  wire formatting
@@ -4234,7 +4259,7 @@
     ^=  odo
     |*  a/@tas
     |=  b/*
-    =<  a(, (. b))                  ::  preserve face
+    =-  a(, (- b))                  ::  preserve face
     ?+  a   @
       $c  @c  $da  @da  $dr  @dr  $f   @f   $if  @if  $is  @is  $p   @p
       $u  @u  $uc  @uc  $ub  @ub  $ui  @ui  $ux  @ux  $uv  @uv  $uw  @uw
