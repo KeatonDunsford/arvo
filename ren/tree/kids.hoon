@@ -1,7 +1,7 @@
 ::
 ::::  /hoon/kids/tree/ren
   ::
-/?  310
+/?  309
 /-  tree-include
 /=  gas  /$  fuel:html
 /=  kids  /^  (map @ta tree-include)
@@ -94,7 +94,7 @@
     ;=  ;div.date: {(trip (got-meta %date))}
     ==
   ~
-  ;h1.title
+  ;h3
     ;*  ?:  (has-opt %filename)
           ;=  ;a(href link-to): {(trip name)}
           ==
@@ -116,7 +116,7 @@
         ?:  =(x %full)
           ?:  |((has-opt %title) (has-opt %filename))
             body.inc
-          ;=  ;h1.title
+          ;=  ;h2
                 ;a(href link-to): *{head.inc}
               ==
               ;*  body.inc
