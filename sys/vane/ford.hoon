@@ -12,7 +12,7 @@
 ++  move  {p/duct q/(wind note gift:able)}              ::  local move
 ++  note                                                ::  out request $->
           $%  $:  $c                                    ::  to %clay
-          $%  {$warp p/sock q/riff:clay}               ::
+          $%  {$warp p/sock q/riff:clay}                ::
           ==  ==                                        ::
               $:  $f                                    ::  to %ford
           $%  {$exec p/@p q/(unit bilk:ford)}          ::
@@ -33,7 +33,7 @@
 --                                                      ::
 |%                                                      ::  structures
 ++  axle                                                ::  all %ford state
-  $:  $2                                                ::  version for update
+  $:  $0                                                ::  version for update
       pol/(map ship baby)                               ::
   ==                                                    ::
 ++  baby                                                ::  state by ship
@@ -1066,6 +1066,12 @@
       |=  {fit/? for/mark}
       |=  {cof/cafe sam/vase}
       ^-  (bolt vase)
+      ::
+      ::  don't verify the product type when using the %noun mark, since
+      ::  that would cast to *, which would prevent the product from
+      ::  being used as a gate or other typed structure.
+      ?:  =(for %noun)  (fine cof sam)
+      ::
       %+  cool  |.(leaf+"ford: check {<[for bek `@p`(mug q.sam)]>}")
       %+  cope  (fang cof for)
       |=  {cof/cafe tux/vase}
@@ -1577,7 +1583,7 @@
           |=  {cof/cafe dir/knot}
           =+  nod=(chap(s.how [dir s.how]) cof bax hon)
           ?:  ?=($2 -.q.nod)
-            (flue cof)
+            (flue p.nod)
           (cope nod (flux some))
         %-  flux
         |=  doy/(map @ cage)  ^-  vase
