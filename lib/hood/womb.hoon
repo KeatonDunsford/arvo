@@ -177,6 +177,7 @@
 ::
 ++  issuing
   |*  a/(map ship (managed))
+  =-  (skip - |=([a=ship *] =(a ~binzod))) ::HACK pending ops resolution
   ^-  (list [ship _(need (divided (~(got by a))))])
   (sort ~(tap by (murn-by a divided)) lor)
 ::
