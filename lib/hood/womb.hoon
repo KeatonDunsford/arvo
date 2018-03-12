@@ -755,6 +755,8 @@
 ++  poke-claim                                        ::  claim plot, req ticket
   |=  {aut/passcode her/@p}
   ?.  can-claim.cfg  ~|(%ticketing-offline !!)
+  ?:  =(~binzod (sein:title her))
+    ~|(%binzod-claiming-broken-sorry !!) ::HACK pending ops resolution
   =<  abet
   =.  log-transaction  (log-transaction %claim +<)
   ?>  =(src src)
