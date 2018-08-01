@@ -134,6 +134,7 @@
       {$womb-balance-all (map passhash mail)}           ::
       {$womb-stat stat}                                 ::
       {$womb-stat-all (map ship stat)}                  ::
+      {$womb-export-csv (map ship stat)}                ::
       {$womb-ticket-info passcode ?($fail $good $used)} ::
   ==
 ++  move  (pair bone card)                              ::  user-level move
@@ -491,6 +492,18 @@
   %-  ~(uni by (~(urn by stars.office) stat-star))
   (~(urn by galaxies.office) stat-galaxy)
 ::
+++  peek-x-export                                       ::  Export state as CSV.
+  |=  tyl=path
+  ?^  tyl
+    ?>  |(=(our src) =([~ src] boss))                   ::  Privileged info.
+    ``womb-stat/(stats-ship ~|(bad-path/tyl (raid tyl who=%p ~)))
+  ^-  (unit (unit [%womb-export-csv (map ship stat)]))
+  =.  stat-no-email  |                                  ::  Uncensor adresses.
+  :^  ~  ~  %womb-export-csv
+  %-  ~(uni by (~(urn by planets.office) stat-planet))
+  %-  ~(uni by (~(urn by stars.office) stat-star))
+  (~(urn by galaxies.office) stat-galaxy)
+::
 ++  peek-x-balance                                     ::  inspect invitation
   |=  tyl/path
   ?~  tyl
@@ -549,6 +562,9 @@
   ::  /stats                          general stats dump
   ::  /stats/@p                       what we know about @p
     $stats  (peek-x-stats +.tyl)
+  ::  /export                                           Export Womb state as CSV
+  ::  /export/@p                                        What we know about @p.
+    %export  (peek-x-export +.tyl)
   ::  /balance                         all invitations
   ::  /balance/passcode                invitation status
     $balance  (peek-x-balance +.tyl)
